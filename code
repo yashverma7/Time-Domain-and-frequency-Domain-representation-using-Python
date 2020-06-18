@@ -9,7 +9,7 @@ from control import *
 #Control design: eigenvalue placement, linear quadratic regulator
 #Estimator design: linear quadratic estimator (Kalman filter)
 
-
+#Python code: Time domain representation of the signal
 import matplotlib.pyplot as plt
 import pylab as pl
 g= tf(1,[1,1,1])
@@ -24,7 +24,7 @@ plt.grid()
 plt.show()
 
 
-
+#Python code: Frequency domain representation of the signal
 from control import *
 import matplotlib.pyplot as plt
 from control.matlab import c2d

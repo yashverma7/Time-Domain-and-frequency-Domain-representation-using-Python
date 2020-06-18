@@ -12,3 +12,7 @@
 #Control design: eigenvalue placement, linear quadratic regulator
 #Estimator design: linear quadratic estimator (Kalman filter)
 
+
+other methods:
+https://stackoverflow.com/questions/55620151/how-to-extract-the-following-frequency-domain-features-in-python
+https://web.math.princeton.edu/~cwrowley/python-control/control.html

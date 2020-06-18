@@ -1,0 +1,63 @@
+from control import *
+#The Python Control Systems Library (control) provides common functions for analyzing and designing feedback control systems.
+#SOME KEY FEATURES ARE:
+#Linear input/output systems in state-space and frequency domain
+#Block diagram algebra: serial, parallel, and feedback interconnections
+#Time response: initial, step, impulse
+#Frequency response: Bode and Nyquist plots
+#Control analysis: stability, reachability, observability, stability margins
+#Control design: eigenvalue placement, linear quadratic regulator
+#Estimator design: linear quadratic estimator (Kalman filter)
+
+
+import matplotlib.pyplot as plt
+import pylab as pl
+g= tf(1,[1,1,1])
+#tf (*args) is used for system creation purpose(especailly here for creating a transfer function(TF) system model)
+#step_response(sys[T,XO,input,output])is used in time domain simulation we have initialised sys as tf
+# xo as 1 ,input as 1 , output as 1
+t,y=step_response(g)
+plt.plot(t,y)
+plt.xlabel('t')
+plt.ylabel('y')
+plt.grid()
+plt.show()
+
+
+
+from control import *
+import matplotlib.pyplot as plt
+from control.matlab import c2d
+#c2d is used for continuous to discrete conversion
+#tf is used to convert to transfer function
+
+#control.matlab.c2d(sysc, Ts, method='zoh')
+
+#Return a discrete-time system
+
+#Parameters:	
+        #sysc: LTI (StateSpace or TransferFunction), continuous
+
+            #System to be converted
+
+        #Ts: number
+
+            #Sample time for the conversion
+
+        #method: string, optional
+
+            #Method to be applied, ‘zoh’ Zero-order hold on the inputs (default)
+            #‘foh’ First-order hold, currently not implemented
+            #‘impulse’ Impulse-invariant discretization, currently 
+            #not implemented ‘tustin’ Bilinear (Tustin) approximation, 
+            #only SISO ‘matched’ Matched pole-zero method, only SISO
+
+
+import pylab as pl
+
+g=tf([1],[1,0.5,1])
+bode_plot(g, dB=True);
+#bode is used with the purpose of frequency domain analysis
+#bode_plot(syslist[, omega, dB, Hz, deg, Plot])	Bode plot for a system
+
+pl.show()
